@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% block title %} Home |
+{% endblock title %}
+{% block body %}
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>E-WEB Services</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Bootstrap icons-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link src="static/styles.css" rel="stylesheet" />
+</head>
+
+<body class="d-flex flex-column h-100">
+  
+    <!-- Header-->
+    <header class="bg-dark py-5">
+      <div class="container px-5">
+        <div class="row gx-5 align-items-center justify-content-center">
+          <div class="col-lg-8 col-xl-7 col-xxl-6">
+            <div class="my-5 text-center text-xl-start">
+              <h1 class="display-5 fw-bolder text-white mb-1">Welcome To</h1>
+              <h1 class="display-5 fw-bolder text-white mb-2">E-Web Service</h1><br>
+              <p class="lead fw-normal text-white-50 mb-4">Your trusted destination for a wide range of essential services. Established with a commintment
+                to simplify your everday task, We proudly offer an array of vital services that make life easier for you.
+              </p>
+              <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                <form action="/accounts/login"> 
+                  <button class="btn btn-primary btn-lg px-4 me-sm-3" type="submit">Get Started</button>
+                  </form>
+                <a class="btn btn-outline-light btn-lg px-4" href="#team">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5"
+              src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
+        </div>
+      </div>
+    </header>
+   
+    <!-- Blog preview section-->
+    <section class="py-5" id="service">
+      <div class="container px-5 my-5">
+        <div class="row gx-5 justify-content-center">
+          <div class="col-lg-8 col-xl-6">
+            <div class="text-center">
+              <h2 class="fw-bolder">Our Services</h2>
+              <p class="lead fw-normal text-muted mb-5"> We offer a variety of Day-to-Day Services.<br> Your destination for all you problems.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row gx-5">
+          <div class="col-lg-4 mb-5">
+            <div class="card h-100 shadow border-0">
+              <img class="card-img-top" src="https://imgs.search.brave.com/8zl0HHjKzhhqHRc4AYs22ImnI_blXp-aI1NzpcoswpE/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/aGluZHVzdGFudGlt/ZXMuY29tL2h0LWlt/Zy9pbWcvMjAyMy8w/My8yMi81NTB4MzA5/L1RoZS1VbmlxdWUt/SWRlbnRpZmljYXRp/b24tQXV0aG9yaXR5/LW9mLUluZGlhLS1V/SURBXzE2Nzg5OTM2/NDIxMjJfMTY3OTQ2/NDE3OTMzNV8xNjc5/NDY0MTc5MzM1Lmpw/Zw" style="height : 210px !important; width: 375px !important;" alt="..." />
+              <div class="card-body p-4">
+                <div class="badge bg-primary bg-gradient rounded-pill mb-2">Govt. Cards</div>
+                <a class="text-decoration-none link-dark stretched-link" href="#!">
+                  <h5 class="card-title mb-3">Government Services</h5>
+                </a>
+                <p class="card-text mb-0">We provide hassle-free assistance for obtaining, updating and correcting various range of govenrment documents like- Aadhar Card, Pan Card, Voter ID Card Labour Card etc.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-5">
+            <div class="card h-100 shadow border-0">
+              <img class="card-img-top"  src="https://imgs.search.brave.com/_kPZNDPavIisfkTnIBM7w_9iQQkfWuqnsvrxRmCrIio/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTE0/ODQ1Njg5NS9waG90/by9pbmRpYW4tY3Vy/cmVuY3kuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPTRDTjFM/RThtQTdYbUlTS2lr/cXZ5TVlOemtvck9l/eDFrVW9RX1h2MFNj/S289" style="height : 210px !important; width: 375px !important;" alt="..." />
+              <div class="card-body p-4">
+                <div class="badge bg-primary bg-gradient rounded-pill mb-2">Money Transfer</div>
+                <a class="text-decoration-none link-dark stretched-link" href="#!">
+                  <h5 class="card-title mb-3">Banking Transactions</h5>
+                </a>
+                <p class="card-text mb-0">We offer seamless banking transactions like transfering/withdrawing money from all Indian banks</p>
+              </div>
+              
+            </div>
+          </div>
+          <div class="col-lg-4 mb-5">
+            <div class="card h-100 shadow border-0">
+              <img class="card-img-top" src="https://resources.tallysolutions.com/wp-content/uploads/2020/01/What-is-Bill-of-Sale.png" style="height : 210px !important; width: 375px !important;" alt="..." />
+              <div class="card-body p-4">
+                <div class="badge bg-primary bg-gradient rounded-pill mb-2">Bills</div>
+                <a class="text-decoration-none link-dark stretched-link" href="#!">
+                  <h5 class="card-title mb-3">Bills Payments</h5>
+                </a>
+                <p class="card-text mb-0">We offer you a one-stop solution for various bill and utility payments like Electricity bill, mobile recharge water bill.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+              <p class="lead fw-normal text-muted mb-5">And many more Services.</p>
+            </div>
+      </div>
+    </section>
+  </main>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  
+  <!-- Header-->
+  <header class="py-5" id='aboutus'>
+    <div class="container px-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-xxl-9">
+          <div class="text-center my-5">
+            <h1 class="fw-bolder mb-3">Our mission is to simplify your life by offering all essential services under one roof.</h1><br>
+            <p class="lead fw-normal text-muted mb-4">E-WEB Services was founded with a singular vision: to make it easy for you to manage essential documents and transactions right in your own community.<br>
+            We put you, our valued customer at the center of everything we do. We take pride in our friendly and efficient service, and we are dedicated to simplifying your life by offering all essential services under one roof.  </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Team members section-->
+  <section class="py-5 bg-light" id='team'>
+    <div class="container px-5 my-5">
+      <div class="text-center">
+        <h2 class="fw-bolder">Our team</h2>
+        <p class="lead fw-normal text-muted mb-5">Dedicated to quality and your success</p>
+      </div>
+      <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+        <div class="col mb-5 mb-5 mb-xl-0">
+          <div class="text-center">
+            <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d"
+              alt="..." />
+            <h5 class="fw-bolder">Mohd Farman Ansari</h5>
+            <div class="fst-italic text-muted">Founder &amp; CEO</div>
+          </div>
+        </div>
+        <div class="col mb-5 mb-5 mb-sm-0">
+          <div class="text-center">
+            <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d"
+              alt="..." />
+            <h5 class="fw-bolder">Mohd Salman Ansari</h5>
+            <div class="fst-italic text-muted">Operations Manager</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+  <section class="py-5 bg-light" id='contactus'>
+    <div class="container px-5 my-5">
+      <div class="text-center">
+        <h2 class="fw-bolder">Contact Us</h2>
+        <p class="lead fw-normal text-muted mb-5">Get in Touch with us.</p>
+      </div>
+      <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+        <div class="col mb-3 mb-3 mb-xl-0">
+          <div class="text-center">
+            <address>E-WEB Services<br>
+              B-10/58 33 Feet Road, Block C,<br>
+              Kabir Nagar, Shahdara, Delhi-94 <br>
+              Phone: <a href="tel:+91 9015291218">+91 9015291218</a><br>
+              Email: <a href="mailto:info@example.com">atro.connect@gmail.com</a>
+          </address>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+
+{% endblock body %}

@@ -1,0 +1,136 @@
+{% extends 'dashboard.html' %}
+
+{% block body %}
+
+<link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable({
+            paging: true,
+            //pageLength: '10',
+            order: [[0, 'desc']]
+        });
+    });
+</script>
+
+
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800 text-align-center">All Task</h1>
+    </div>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="container-fluid p-0">
+        <div class="alert alert-danger  alert-dismissible" role="alert" id='alertdjango'>
+            <button type="button" class="close btn-sm btn btn-success" data-dismiss="alert" aria-label="Close"
+                onclick="document.getElementById('alertdjango').remove()">
+                <span aria-hidden="True">&times;</span>
+            </button>
+            {{ message }}
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Area Chart -->
+        <div class="col-xl-12 col-lg-9">
+            <div class="card shadow mb-10">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">All Records</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    {% if cust %}
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover" id="example" width="100%" cellspacing="0">
+                            <thead class='thead-dark'>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Customer Name</th>
+                                    <th>Phone</th>
+                                    <th>Service</th>
+                                    <th>Price</th>
+                                    <th>Paid</th>
+                                    <th>Balance</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Comments</th>
+                                    <th>Print</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Customer Name</th>
+                                    <th>Phone</th>
+                                    <th>Service</th>
+                                    <th>Price</th>
+                                    <th>Paid</th>
+                                    <th>Balance</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Comments</th>
+                                    <th>Print</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                {% for c in cust %}
+                                <tr>
+                                    <td>{{c.id}}</td>
+                                    <td>{{c.name}}</td>
+                                    <td>{{c.phone}}</td>
+                                    <td>{{c.service}}</td>
+                                    <td>{{c.price}}</td>
+                                    <td>{{c.paid}}</td>
+                                    {% if c.bal == 0 %}
+                                    <td style="color:green;">{{c.bal}}</td>
+                                    {% else %}
+                                    <td style="color:red;"> {{c.bal}}</td>
+                                    {% endif %}
+                                    <td>{{c.date}}</td>
+                                    {% if c.status %}
+                                    <td style="color:green;">Complete</td>
+                                    {% else %}
+                                    <td style="color:red;"> Pending</td>
+                                    {% endif %}
+                                    <td>{{c.cmt}}</td>
+                                    <td>
+                                        <form method="POST" , action='/bill/{{c.id}}' target='_blank'>
+                                            {% csrf_token %}
+                                            <button class="btn btn-outline-success" type="submit">Print</button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form method="POST" , action='/delete/{{c.id}}'>
+                                            {% csrf_token %}
+
+                                            <button class="btn btn-outline-danger"
+                                                onclick="return confirm('Are you sure you want to Delete Customer?');">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    No Record Found
+                    {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+{% endblock body %}

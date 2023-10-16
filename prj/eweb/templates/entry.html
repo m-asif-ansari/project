@@ -1,0 +1,65 @@
+{% extends 'dashboard.html' %}
+{% block title %} Entry |
+{% endblock title %}
+{% block body %}
+<style>
+    select{
+        padding: 6px 12px; 
+        width: 100%; 
+        border: 1px solid #d1d3e2;
+        border-radius: .35rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+</style>
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Add Entry</h1>
+
+    </div>
+    {% if messages %}
+
+    {% for message in messages %}
+    <div class="container-fluid p-0">
+        <div class="alert alert-success  alert-dismissible" role="alert" id='alertdjango'>
+            <button type="button" class="close btn-sm btn btn-danger" data-dismiss="alert" aria-label="Close" onclick="document.getElementById('alertdjango').remove()">
+                <span aria-hidden="True">&times;</span>
+            </button>
+            {{ message }}
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <!-- Content Row -->
+    <div class="row">
+    </div>
+    <div class="row">
+        <!-- Area Chart -->
+        <div class="col-xl-12 col-lg-9">
+            <div class="card shadow mb-10">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Fill the form to Register a new Entry in system.</h6>
+
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+
+                    {% load crispy_forms_tags %}
+                    <div class='container'>
+                        <form action="/entry" method="post">
+                            {% csrf_token %}
+                            {{form | crispy}}
+                            <input class="btn btn-primary btn-lg" type='submit'>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+{% endblock body %}

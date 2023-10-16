@@ -1,0 +1,116 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+
+    <title>Bill | E-Web Services</title>
+
+</head>
+
+<body>
+    <link href="/static/styles3.css" rel="stylesheet" type="text/css">
+    <div id="page-wrap">
+        <p id="header" ><span style="font-size:20px;">E-WEB SERVICES</span> <br><br>
+            INVOICE <br>
+        </p>
+
+        <div id="identity">
+            <div id="customer">
+                <p id="customer-title">Name: {{cust.name}}<br>
+                    Phone: {{cust.phone}}</p>
+                <textarea id="customer-title">
+            </textarea>
+
+                <table id="meta">
+                    <tr>
+                        <td class="meta-head">Invoice #</td>
+                        <td>
+                            <p>{{bill_no}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="meta-head">Date</td>
+                        <td>
+                            <p id="date">{{cust.date}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="meta-head">Amount Due</td>
+                        <td>
+                            <div class="due">Rs. {{cust.bal}}</div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <table id="items">
+                <tr>
+                    <th>Service</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Paid</th>
+                    <th>Balance</th>
+                </tr>
+
+                <tr class="item-row">
+                    <td class="item-name">
+                        <p>{{cust.service}}</p>
+                    </td>
+                    <td class="description">
+                        <p>{{cust.cmt}}</p>
+                    </td>
+                    <td>
+                        <p class="cost">Rs. {{cust.price}}</p>
+                    </td>
+                    <td>
+                        <p class="qty">Rs. {{cust.paid}}</p>
+                    </td>
+                    <td><span class="price">Rs. {{cust.bal}}</span></td>
+                </tr>
+                <tr class="item-row">
+                    <td></td>
+                </tr>
+                <tr class="item-row">
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="blank"> </td>
+                    <td colspan="2" class="total-line">Total</td>
+                    <td class="total-value">
+                        <div id="total">Rs. {{cust.paid}}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="blank"> </td>
+                    <td colspan="2" class="total-line">Amount Paid</td>
+
+                    <td class="total-value">
+                        <p id="paid">Rs. {{cust.paid}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="blank"> </td>
+                    <td colspan="2" class="total-line balance">Balance Due</td>
+                    <td class="total-value balance">
+                        <div class="due">Rs. {{cust.bal}}</div>
+                    </td>
+                </tr>
+
+            </table>
+
+            <div id="terms">
+                <h5>Thank you & Visit again</h5>
+                <p>E-WEB Services <br>
+                    B-10/58 33 Feet Road, Block C, Kabir Nagar, Shahdara, Delhi-94<br>
+                    +91 9015291218
+                </p>
+            </div>
+
+        </div>
+
+</body>
+
+</html>

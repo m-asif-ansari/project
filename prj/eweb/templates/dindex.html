@@ -1,0 +1,146 @@
+{% extends 'dashboard.html' %}
+{% block title %} Admin |
+{% endblock title %}
+{% block body %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Earnings (Today)</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                               {% if paid_today %}
+                               Rs. {{paid_today}}
+                               {% else %}
+                               Rs. 0
+                               {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Earnings (Last 30 Days)</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">Rs. {{paid_month}}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Due Amount
+                            </div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Rs. {{due}}</div>
+                                </div>
+                                <div class="col">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pending Requests Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Pending Tasks</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{pending}}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Row -->
+
+    <div class="row">
+
+        <!-- Area Chart -->
+        <div class="col-xl-12 col-lg-9">
+            <div class="card shadow mb-10">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">More Information</h6>
+
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <p>
+                        Welcome to Admin Portal of E-Web Services
+                    </p>
+                    <li>
+                        Click on Dashboard to see the Money/Records Analysis.
+                    </li><br>
+                    <li>
+                        Click on Add Entry to register a new entry in the system.
+                    </li><br>
+                    <li>
+                        Click on All Task to see the list of all past records registered in system.
+                    </li><br>
+                    <li>
+                        Click on Pending Task to See the List of Currently Pending task that you have to work on.
+                    </li><br>
+                    <li>
+                        Click on Due Amount to see all records where the Customer has not paid the full amount.
+                    </li><br>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+
+{% endblock body %}
